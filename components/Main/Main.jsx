@@ -1,21 +1,15 @@
 "use client"
 
-import React from 'react';
-import UploadBox from "@/components/UploadBox/UploadBox";
-import DownloadFile from "@/components/DownloadFile/DownloadFile";
+import React, {useState} from 'react';
 import useConvert from "@/hooks/useConvert";
+import Upload from "@/components/Upload/Upload";
+import DocList from "@/components/DocList/DocList";
 
 const Main = () => {
-
-    const {handleConvert, xml} = useConvert();
-
     return (
-        <div className="h-full">
-            <div className="flex flex-col gap-8 justify-center items-center">
-                <h1>Excel to XML converter</h1>
-                <UploadBox handleConvert={handleConvert} />
-                <DownloadFile generated={xml}/>
-            </div>
+        <div className="flex flex-col gap-8 min-h-screen w-full p-4">
+            <Upload/>
+            <DocList/>
         </div>
     );
 };
