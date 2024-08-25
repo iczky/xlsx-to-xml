@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const SERVICE_NAME = import.meta.env.VITE_SERVICE_NAME;
-const ENDPOINT = import.meta.env.VITE_ENDPOINT;
-const USERNAME = import.meta.env.VITE_SOAP_USERNAME;
-const PASSWORD = import.meta.env.VITE_SOAP_PASSWORD;
+const SERVICE_NAME = process.env.VITE_SERVICE_NAME;
+const ENDPOINT = process.env.VITE_ENDPOINT;
+const USERNAME = process.env.VITE_SOAP_USERNAME;
+const PASSWORD = process.env.VITE_SOAP_PASSWORD;
 
 const soapRequest = (xmlData) => {
+    console.log({SERVICE_NAME, ENDPOINT, USERNAME, PASSWORD})
   const envelope = `
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:coc="cocokms.xsd">
     <soapenv:Header/>
