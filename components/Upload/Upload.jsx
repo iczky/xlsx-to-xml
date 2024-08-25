@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import UploadBox from "@/components/UploadBox/UploadBox";
 import { DocContext } from "@/context/DocContext";
 import { formatDate } from "@/utils/formatDate";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
 
 const Upload = () => {
   const { data, setData } = useContext(DocContext);
@@ -41,7 +43,9 @@ const Upload = () => {
 
   return (
     <div className="mx-4 p-4 sm:mx-10 md:mx-20 lg:mx-40">
-      <h1 className="text-2xl sm:text-3xl font-bold">Upload new report</h1>
+      <span className="text-2xl sm:text-3xl font-bold">
+      <FontAwesomeIcon icon={faUpload} className="mr-2" />
+      Upload new report</span>
       <div className="flex flex-col w-full sm:w-3/4 md:w-1/2 lg:w-1/4 mt-3">
         <input
           ref={inputRef}
@@ -69,6 +73,7 @@ const Upload = () => {
             type="button"
             onClick={handleUpload}
           >
+            <FontAwesomeIcon icon={faUpload} className="mr-2" />
             Upload
           </button>
         </div>
