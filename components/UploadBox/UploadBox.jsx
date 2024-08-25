@@ -2,6 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 import {FileUploader} from "react-drag-drop-files";
+import './classes.css'
 
 const fileTypes = ["XLX", "XLSX", "XLS"];
 
@@ -15,6 +16,7 @@ const UploadBox = ({onFileSelect}) => {
             types={fileTypes}
             label="Tambahkan file disini"
             handleChange={handleChange}
+            classes="custom-class"
         />
     );
 };
