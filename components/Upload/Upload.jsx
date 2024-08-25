@@ -51,7 +51,7 @@ const Upload = () => {
           onChange={(e) => setFileName(e.target.value)}
         />
         <div className="w-full mt-2">
-          <UploadBox onFileSelect={handleFileSelect} />
+          <UploadBox onFileSelect={handleFileSelect} fileName={fileName} />
         </div>
         <div className="w-full mt-4 flex justify-between sm:justify-end">
           <button
