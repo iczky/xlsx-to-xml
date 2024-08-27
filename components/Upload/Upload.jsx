@@ -27,7 +27,6 @@ const Upload = () => {
             file: selectedFile,
             upload_date: formatDate(currentDate),
             sent_date: formatDate(currentDate),
-            action: "Uploaded",
         };
 
         setData([...data, newDocument]);
@@ -36,27 +35,31 @@ const Upload = () => {
     };
 
     return (
-        <div className="p-4 mx-40 border-2 border-gray-200 flex flex-col justify-center gap-4">
+        <div className="p-4 mx-4 md:mx-10 lg:mx-40 border-2 border-gray-200 flex flex-col justify-center gap-4">
             <div className="flex justify-between p-2 border-b-2 border-gray-200">
-                <h1>Upload File Excel</h1>
-                <X/>
+                <h1 className="text-sm md:text-lg">Upload File Excel</h1>
+                <X className="cursor-pointer"/>
             </div>
-            <div className="grid grid-cols-2 gap-4 p">
-                <div className="grid gap-8">
-                    <div className="flex w-full justify-end">
-                        <div className="flex gap-2 w-1/2 justify-end items-center">
-                            <input className="p-2 rounded-t-lg rounded-b-md bg-gray-300 w-full pr-8"
-                                   placeholder="Masukkan judul kegiatan"
-                                   value={fileName}
-                                   onChange={(e) => setFileName(e.target.value)}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid gap-4 md:gap-8">
+                    <div className="flex w-full justify-center md:justify-end">
+                        <div className="flex flex-col md:flex-row gap-2 w-full md:w-1/2 justify-end items-center">
+                            <input
+                                className="p-2 rounded-t-lg rounded-b-md bg-gray-300 w-full pr-8"
+                                placeholder="Masukkan judul kegiatan"
+                                value={fileName}
+                                onChange={(e) => setFileName(e.target.value)}
                             />
-                            <div className="hover:bg-gray-200 rounded-lg p-2" onClick={() => setFileName("")}>
+                            <div
+                                className="hover:bg-gray-200 rounded-lg p-2 cursor-pointer"
+                                onClick={() => setFileName("")}
+                            >
                                 <X/>
                             </div>
                         </div>
                     </div>
-                    <div className="flex w-full justify-end">
-                        <div className="flex gap-4">
+                    <div className="flex w-full justify-center md:justify-end">
+                        <div className="flex gap-4 flex-col md:flex-row w-full md:w-auto">
                             <button
                                 className="bg-slate-300 hover:bg-slate-700 text-black font-bold py-2 px-6 rounded-full"
                                 type="button"
@@ -64,22 +67,25 @@ const Upload = () => {
                                     setSelectedFile(null);
                                     setFileName("");
                                 }}
-                            >Batal
+                            >
+                                Batal
                             </button>
                             <button
                                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full"
                                 type="button"
                                 onClick={handleUpload}
-                            >Upload
+                            >
+                                Upload
                             </button>
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-center items-center w-full">
-                    <UploadBox onFileSelect={handleFileSelect} />
+                    <UploadBox onFileSelect={handleFileSelect}/>
                 </div>
             </div>
         </div>
+
     );
 };
 
