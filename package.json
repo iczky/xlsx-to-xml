@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-table": "^8.20.1",
     "axios": "^1.7.5",
@@ -21,7 +23,8 @@
     "react-drag-drop-files": "^2.3.10",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^8",

@@ -21,11 +21,11 @@ const DataTable = ({columns, data}) => {
         getPaginationRowModel: getPaginationRowModel(),
         onSortingChange: setSorting,
         getSortedRowModel: getSortedRowModel(),
-        onColumnFiltersChange: setColumnFilters,
+        onColumnFilterChanged: setColumnFilters,
         getFilteredRowModel: getFilteredRowModel(),
         state: {
             sorting,
-            columnFilters,
+            columnFilters
         }
     })
     return (
@@ -34,12 +34,8 @@ const DataTable = ({columns, data}) => {
                 <Input
                     placeholder="Filter dokumen..."
                     value={table.getColumn("document")?.getFilterValue() || ""}
-                    onChange={(event) =>{
-                        console.log(event.target.value);
-                        console.log(table.getColumn("document").getFilterValue());
-                        console.log(table.getColumn("document"));
+                    onChange={(event) =>
                         table.getColumn("document")?.setFilterValue(event.target.value)
-                    }
                     }
                     className="max-w-sm"
                 />
