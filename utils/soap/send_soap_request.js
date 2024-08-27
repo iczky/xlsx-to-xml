@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const SERVICE_NAME = process.env.VITE_SERVICE_NAME;
-const ENDPOINT = process.env.VITE_ENDPOINT;
-const USERNAME = process.env.VITE_SOAP_USERNAME;
-const PASSWORD = process.env.VITE_SOAP_PASSWORD;
+const SERVICE_NAME = process.env.SOAP_SERVICE;
+const ENDPOINT = process.env.SOAP_URL;
+const USERNAME = process.env.SOAP_USERNAME;
+const PASSWORD = process.env.SOAP_PASSWORD;
 
 const soapRequest = async (xmlData) => {
   const envelope = `
