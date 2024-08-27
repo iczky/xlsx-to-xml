@@ -22,7 +22,8 @@
     "react-drag-drop-files": "^2.3.10",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^8",

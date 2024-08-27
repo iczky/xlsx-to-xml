@@ -10,6 +10,8 @@ const useConvert = () => {
     const converter = new Converter(input);
     converter.convert((xmlData) => {
       setXml(xmlData);
+
+      console.log(xmlData)
     });
   };
 

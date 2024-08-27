@@ -4,6 +4,7 @@ import { DocContext } from "@/context/DocContext";
 import { formatDate } from "@/utils/formatDate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import Converter from "@/utils/xml/converter";
 
 const Upload = () => {
   const { data, setData } = useContext(DocContext);
@@ -24,6 +25,11 @@ const Upload = () => {
       alert("Please provide a file name and select a file.");
       return;
     }
+    console.log({selectedFile})
+    const convert = new Converter(selectedFile);
+    const xml = convert.convert((xml) => {
+      console.log(xml);
+    });
 
     const currentDate = new Date();
 
@@ -44,8 +50,9 @@ const Upload = () => {
   return (
     <div className="mx-4 p-4 sm:mx-10 md:mx-20 lg:mx-40">
       <span className="text-2xl sm:text-3xl font-bold">
-      <FontAwesomeIcon icon={faUpload} className="mr-2" />
-      Upload new report</span>
+        <FontAwesomeIcon icon={faUpload} className="mr-2" />
+        Upload new report
+      </span>
       <div className="flex flex-col w-full sm:w-3/4 md:w-1/2 lg:w-1/4 mt-3">
         <input
           ref={inputRef}
