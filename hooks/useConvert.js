@@ -1,25 +1,24 @@
-"use client"
+"use client";
 
-import {useEffect, useState} from "react";
-import readExcel from "@/utils/xml/converter";
+import Converter from "@/utils/xml/converter";
+import { useEffect, useState } from "react";
 
 const useConvert = () => {
-    const [xml, setXml] = useState("")
+  const [xml, setXml] = useState("");
 
-    const handleConvert = (input) => {
-        readExcel(input, (e) => {
-            setXml(e)
-        })
-    }
+  const handleConvert = (input) => {
+    const converter = new Converter(input);
+    converter.convert((xmlData) => {
+      setXml(xmlData);
+    });
+  };
 
-    useEffect(() => {
+  useEffect(() => {}, [xml]);
 
-    }, [xml]);
-
-    return {
-        xml,
-        handleConvert
-    };
-}
+  return {
+    xml,
+    handleConvert,
+  };
+};
 
 export default useConvert;
